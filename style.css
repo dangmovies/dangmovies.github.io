@@ -819,3 +819,44 @@ letter-spacing: 0.06em;
     filter: grayscale(0%);
     opacity: 1;
 }
+@media (max-width: 768px) {
+    /* Stack the poster and info */
+    .project-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* Ensure the link wrapping the poster doesn't shrink */
+    .media-column a {
+        display: block;
+        width: 100%;
+    }
+
+    .poster-img {
+        max-width: 280px; /* Consistent size for all posters on mobile */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .info-column {
+        width: 100%;
+        padding: 0 15px; /* Adds a little "breathing room" on phone edges */
+    }
+
+    /* Keeps the project title links looking clean */
+    .project-title a {
+        display: inline-block;
+        line-height: 1.4;
+    }
+
+    /* Stack the credits columns if you used two columns earlier */
+    .credits-container {
+        display: flex;
+        flex-direction: column;
+        text-align: left; /* Keep names left-aligned for readability */
+        padding-left: 20px;
+    }
+}
