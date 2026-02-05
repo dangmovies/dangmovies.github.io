@@ -1,359 +1,64 @@
-/* ===========================
-   COLOR PALETTE & VARIABLES
-   =========================== */
-
-:root {
-    /* Color Palette */
-    --raspberry: #dd2d4a;
-    --carrot-orange: #e89005;
-    --baltic-blue: #41658a;
-    --crushed-berry: #880d1e;
-    --frosted-mint: #2a2a2a; /* dark alternative */
-    --golden-apricot: #df9a57;
-    --hunter-green: #436436;
-    
-    /* Functional Colors */
-    --primary: var(--raspberry);
-    --secondary: var(--baltic-blue);
-    --accent: var(--carrot-orange);
-    --dark: #ffffff;         /* headings / main text */
-    --light: #ffffff;        /* lighter text */
-    --text-dark: #ffffff;    /* main text */
-    --text-light: #ffffff;   /* lighter text */
-    --white: #ffffff;
-    --background: #000000;   /* main background */
-    
-    /* Typography */
-    --font-headline: 'Lora', serif;
-    --font-body: 'Inter', sans-serif;
-    
-    /* Spacing */
-    --container-width: 1200px;
-    --section-spacing: 5rem;
-}
-
-/* ===========================
-   RESET & BASE STYLES
-   =========================== */
-
+/* Reset default margins and paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
+/* Body: black background, white text */
 body {
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    background-color: var(--background);
-    line-height: 1.7;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center; /* center everything */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-headline);
-    color: var(--text-dark);
-    line-height: 1.3;
-    font-weight: 700;
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-dark);
-    transition: all 0.3s ease;
-}
-
-p, span, li, dt, dd {
-    color: var(--text-dark);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* ===========================
-   NAVIGATION
-   =========================== */
-
-.navbar {
-    background-color: #111111;
-    padding: 1.25rem 0;
-    box-shadow: 0 2px 10px rgba(255,255,255,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Header with logo */
+.header {
+    padding: 20px 0;
 }
 
 .logo {
-    font-family: var(--font-headline);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--primary);
+    display: block;
+    margin: 0 auto; /* center the logo */
+    height: auto; /* keep original height */
+    width: auto;  /* keep original width */
+    /* max-width removed so original size shows */
 }
 
-.logo:hover {
-    color: var(--accent);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-.nav-menu a {
-    font-weight: 500;
-    color: var(--text-dark);
-    position: relative;
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.3s;
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
-.back-link {
-    color: var(--secondary);
-    font-weight: 500;
-}
-
-.back-link:hover {
-    color: var(--primary);
-}
-
-/* ===========================
-   HERO SECTION
-   =========================== */
-
+/* Hero Section */
 .hero {
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #111111 0%, #000000 100%);
-    padding: 4rem 2rem;
+    padding: 50px 20px;
 }
 
-.hero-content {
-    text-align: center;
-    max-width: 800px;
-    z-index: 10;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.hero-badge {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    animation: fadeInDown 0.8s ease;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
-
-.hero-title {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-dark);
-    animation: fadeInUp 0.8s ease 0.2s backwards;
-}
-
-.hero-title .highlight {
-    color: var(--primary);
-    position: relative;
-}
-
-.hero-description {
-    font-size: 1.3rem;
-    color: var(--text-dark);
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-    animation: fadeInUp 0.8s ease 0.4s backwards;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.6s backwards;
-}
-
-/* Hero Decorations */
-.hero-decoration {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.decoration-circle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
-}
-
-.circle-1 {
-    width: 300px;
-    height: 300px;
-    background: var(--primary);
-    top: -100px;
-    right: -50px;
-}
-
-.circle-2 {
-    width: 200px;
-    height: 200px;
-    background: var(--accent);
-    bottom: 10%;
-    left: -50px;
-}
-
-.circle-3 {
-    width: 150px;
-    height: 150px;
-    background: var(--secondary);
-    top: 50%;
-    right: 10%;
-}
-
-/* ===========================
-   BUTTONS
-   =========================== */
 
 .btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-    font-family: var(--font-body);
+    padding: 12px 25px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
+.btn:hover {
+    background-color: #ddd;
 }
 
-.btn-primary:hover {
-    background-color: var(--crushed-berry);
-    border-color: var(--crushed-berry);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(221, 45, 74, 0.3);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-.btn-light {
-    background-color: var(--white);
-    color: var(--primary);
-    border-color: var(--white);
-}
-
-.btn-light:hover {
-    background-color: transparent;
-    border-color: var(--white);
-    color: var(--white);
-}
-
-/* ===========================
-   SECTIONS, CARDS & TEXT
-   =========================== */
-
-section,
-.highlight-card,
-.project-preview,
-.portfolio-card,
-.result-card,
-.report-main,
-.sidebar-section,
-.contact-info-panel,
-.contact-form-panel {
-    background-color: #111111;
-    color: var(--text-dark);
-}
-
-h1, h2, h3, h4, h5, h6,
-p, span, li, dt, dd, a {
-    color: var(--text-dark);
-}
-
-/* Keep badges & buttons colorful */
-.project-badge {
-    background-color: var(--accent);
-    color: var(--white);
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
-
+/* Footer */
 .footer {
-    background-color: #111111;
-    color: var(--white);
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
 }
-
-/* ===========================
-   ANIMATIONS & RESPONSIVE
-   =========================== */
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Media queries unchanged */
