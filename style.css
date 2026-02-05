@@ -728,3 +728,92 @@ letter-spacing: 0.06em;
     height: 60px; /* Adjusted to match Image 5 */
     filter: brightness(0) invert(1); /* Forces logos to pure white */
 }
+.wtcra-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left; /* Text stays left-aligned as per image */
+    line-height: 1.7;
+}
+
+.wtcra-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wtcra-header h1 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Image Wrapping Logic */
+.img-wrap-right {
+    float: right;
+    width: 45%;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.img-wrap-left {
+    float: left;
+    width: 45%;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.img-wrap-right img, .img-wrap-left img {
+    width: 100%;
+    height: auto;
+}
+
+.caption {
+    font-size: 0.75rem;
+    color: #cfcfcf;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Clearfix to prevent text from overlapping following sections */
+.text-block::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Map & Footer */
+.map-section {
+    margin: 60px 0;
+    width: 100%;
+}
+
+.wtcra-footer {
+    text-align: center;
+    margin-top: 100px;
+    border-top: 1px solid #333;
+    padding-top: 40px;
+}
+
+.wtcra-footer .section-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.funder-logo.caov {
+    height: 100px;
+    width: auto;
+    /* This removes all color but keeps the original light/dark values */
+    filter: grayscale(100%); 
+    /* Optional: slightly lower opacity to help it blend with the dark theme */
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optional: logo returns to color when the user hovers over it */
+.funder-logo.caov:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
