@@ -15,7 +15,7 @@ body {
 }
 
 .logo {
-    max-width: 300px;
+    max-width: 450px;
     margin-bottom: 20px;
 }
 
@@ -25,11 +25,19 @@ body {
     gap: 30px;
 }
 
-.nav-links a {
-    color: white;
+/* Navigation Link Base Color */
+.nav-links a, 
+.dropbtn {
+    color: #cfcfcf; /* Standard state */
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Hover State */
+.nav-links a:hover, 
+.dropdown:hover .dropbtn,
+.dropdown-content a:hover {
+    color: #f0f0f0; /* Hover state */
 }
 
 /* Dropdown Logic */
@@ -59,12 +67,20 @@ body {
     display: block;
 }
 
-/* Divider */
-.divider {
-    border: 0;
-    border-top: 1px solid #333;
-    width: 90%;
-    margin: 20px auto;
+hr.divider {
+    /* Reset all default browser styles first */
+    border: none;
+    height: 1px;
+    
+    /* Apply the white color */
+    background-color: #ffffff !important;
+    color: #ffffff !important;
+    
+    /* Ensure it is fully visible */
+    opacity: 1 !important;
+    
+    /* Keep your layout spacing */
+    margin: 40px 0;
 }
 
 /* Main Layout */
@@ -95,11 +111,41 @@ body {
     flex: 1;
 }
 
-/* Typography Reset */
+/* Typography Reset & Title Styling */
 .project-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+letter-spacing: 0.06em;
     margin: 0;
     line-height: 1.1;
+    
+    /* Text color */
+    color: #ffffff; 
+    
+    /* Underline styling */
+    text-decoration: underline;
+    text-decoration-color: #3d3d3d;
+    
+    /* SET THICKNESS HERE */
+    text-decoration-thickness: 1px; 
+    
+    /* Distance from the text */
+    text-underline-offset: 5px; 
+    
+    transition: all 0.3s ease;
+}
+
+/* Hover State */
+.project-title:hover {
+    color: #dbdbdb;
+    text-decoration-color: #dbdbdb;
+    /* Optional: maintain thickness on hover */
+    text-decoration-thickness: 1px;
+}
+
+/* Hover State */
+.project-title:hover {
+    color: #dbdbdb;
+    text-decoration-color: #dbdbdb;
 }
 
 .genre-sub {
@@ -111,30 +157,30 @@ body {
 
 .genre {
     font-weight: 300;
-    color: #bbb;
+    color: #ffffff !important;
 }
 
 .status-list {
     font-style: italic;
-    font-size: 0.9rem;
-    color: #999;
+    font-size: 1rem;
+    color: #ffffff !important;
     padding-left: 20px;
     margin-bottom: 20px;
 }
 
 .description {
     margin: 0 0 10px 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.4;
 }
 
 .credits p {
     margin: 2px 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .acknowledgment {
-    font-size: 0.85rem;
-    color: #888;
+    font-size: 1rem;
+    color: #ffffff;
     margin-top: 20px;
 }
 
