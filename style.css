@@ -54,19 +54,21 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    padding-top: 15px;
+    /* REDUCED: Reduced top space between 'showcase' and the first year */
+    padding-top: 5px; 
 }
 
 .dropdown-content a {
     display: block;
-    padding: 10px 0;
+    /* REDUCED: Reduced from 10px to 2px to bring the years together */
+    padding: 4px 0; 
     font-size: 1.1rem;
+    line-height: 1.2; /* Added to ensure tight vertical height */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .divider {
     /* Reset all default browser styles first */
     border: none;
