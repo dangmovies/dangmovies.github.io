@@ -27,7 +27,7 @@
 
 <main class="content-container">
     <div class="page-header-center">
-        <h1 class="page-title">development</h1>
+        <h1 class="page-titledev">development</h1>
         <p class="dev-intro">
             These projects are currently in development and seeking funding and partnership opportunities. If you’re interested in supporting, please reach out at <a href="mailto:media@dangmovies.ca">media@dangmovies.ca</a>.
         </p>
@@ -113,7 +113,27 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
     </div>
+<p class="copyright">
+        &copy; <span id="roman-year">MMXXVI</span> Ransom House Pictures Inc.
+    </p>
 </footer>
-</main>
+
+<script>
+    function toRoman(year) {
+        const roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
+        let str = '';
+        for (let i in roman) {
+            while (year >= roman[i]) {
+                str += i;
+                year -= roman[i];
+            }
+        }
+        return str;
+    }
+    document.getElementById('roman-year').textContent = toRoman(new Date().getFullYear());
+</script>
+
+
+    </main>
 </body>
 </html>

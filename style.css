@@ -1,8 +1,27 @@
+/* 1. Register the fonts */
+@font-face {
+    font-family: 'FuturaBold';
+    src: url('fonts/FuturaCyrillicBold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'FuturaLight';
+    src: url('fonts/FuturaCyrillicLight.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* General Base */
 body {
     background-color: black;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -135,8 +154,9 @@ body {
 
 /* Typography Reset & Title Styling */
 .project-title {
+    font-family: 'FuturaBold', sans-serif;
     font-size: 1.5rem;
-letter-spacing: 0.06em;
+    letter-spacing: 0.06em;
     margin: 0;
     line-height: 1.1;
     
@@ -171,6 +191,7 @@ letter-spacing: 0.06em;
 }
 
 .genre-sub {
+    font-family: 'FuturaLight', sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
     color: #888;
@@ -178,6 +199,7 @@ letter-spacing: 0.06em;
 }
 
 .genre {
+    font-family: 'FuturaLight', sans-serif;
     font-weight: 300;
     color: #ffffff !important;
 }
@@ -299,9 +321,14 @@ letter-spacing: 0.06em;
 .about-text-col {
     flex: 2;
 }
-
+.page-title {
+    font-family: 'FuturaBold', sans-serif;
+    font-size: 2rem;
+    margin: 10px 0;
+}
 /* Text Styling */
 .name-header {
+    font-family: 'FuturaLight', sans-serif;
     font-size: 2rem;
     margin: 10px 0;
     font-weight: 300;
@@ -395,8 +422,14 @@ letter-spacing: 0.06em;
     flex-direction: column;
     align-items: center;
 }
+.page-titledev {
+    font-family: 'FuturaLight', sans-serif;
+    font-size: 2rem;
+    margin: 10px 0;
+}
 
 .year-header {
+    font-family: 'FuturaLight', sans-serif;
     text-align: center;
     font-weight: 100;                    /* Keeping it light/thin */
     font-size: 1.5rem;                   /* Adjust size to your preference */
@@ -717,9 +750,6 @@ letter-spacing: 0.06em;
     padding-bottom: 60px;
 }
 
-.acknowledgment {
-    font-size: 0.75rem;
-    margin-bottom: 30px;
 }
 
 .logo-row {
@@ -822,6 +852,16 @@ letter-spacing: 0.06em;
     filter: grayscale(0%);
     opacity: 1;
 }
+.site-footer {
+    text-align: center;
+    padding: 60px 0 40px 0;
+    width: 100%;
+}
+
+.site-footer p {
+    font-size: 1rem;
+    color: #666; /* Subtle grey so it doesn't distract from projects */
+}
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
     /* 1. Reset the container for a tight fit */
@@ -910,4 +950,26 @@ letter-spacing: 0.06em;
     .funder-logo.caov {
         max-height: 70px !important; 
     }
+@media (max-width: 768px) {
+    .logo {
+        /* This is the key: it can't be wider than 90% of the screen */
+        max-width: 90% !important; 
+        
+        /* Ensures the height adjusts automatically to prevent squishing */
+        height: auto !important;
+        
+        /* Centers the logo if it's smaller than the screen */
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Ensure the header container isn't forcing a wide width */
+    .header {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
+
