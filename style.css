@@ -345,14 +345,17 @@ display: flex !important;
     font-weight: 300;
 }
 
-.contact-info {
-    margin-bottom: 25px;
-    font-size: 0.95rem;
+.contact-info a {
+    text-decoration: none;
+    color: inherit; /* Keeps the color matching the surrounding text */
+    transition: text-decoration 0.3s ease;
 }
 
-.contact-info a {
-    color: #fff;
+/* 2. Hover state: Add the underline */
+.contact-info a:hover {
     text-decoration: underline;
+    text-decoration-thickness: 1px; /* Matches your project title style */
+    text-underline-offset: 3px;     /* Gives the text some breathing room */
 }
 
 .bio {
