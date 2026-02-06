@@ -1,5 +1,11 @@
 /* 1. Register the fonts */
 @font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/ProximaNova-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; /* This tells the browser to use THIS file for italics */
+}
+@font-face {
     font-family: 'FuturaBold';
     src: url('fonts/FuturaCyrillicBold.ttf') format('truetype');
     font-weight: bold;
@@ -125,7 +131,7 @@ body {
 .content-container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 80px;
 }
 
 .project-entry {
@@ -147,10 +153,6 @@ body {
         max-width: 400px !important; 
         height: auto;
     }
-
-.info-column {
-    flex: 1;
-}
 
 /* Typography Reset & Title Styling */
 .project-title {
@@ -228,17 +230,26 @@ body {
     margin-top: 20px;
 }
 
-/* Funder Logos - Inverting for Black BG */
-.funder-logos {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    align-items: center;
+/* Force enlarge for Desktop */
+.info-column .funder-logos {
+display: flex !important;
+    flex-direction: column; /* This is what stacks them vertically */
+    align-items: flex-start; /* Keeps them aligned to the left of the text column */
 }
 
 .funder-img {
-    max-height: 50px;
-    filter: brightness(0) invert(1); /* Turns black logos white */
+    /* 8vw means the height is always 8% of the browser width */
+    height: 8vw !important; 
+    
+    /* Set a 'ceiling' so it doesn't get massive on 4K monitors */
+    max-height: 65px !important; 
+    
+    /* Set a 'floor' so it stays legible on small screens */
+    min-height: 40px !important; 
+    
+    width: auto !important;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
 }
 
 /* Screening Dates Section */
@@ -536,11 +547,7 @@ body {
     margin-top: 20px;
 }
 
-.funder-img {
-    height: 40px;
-    width: auto;
-    filter: grayscale(100%) brightness(200%);
-}
+
 /* Container for the Showcase Page */
 .showcase-page {
     max-width: 1000px;
@@ -862,6 +869,7 @@ body {
     font-size: 1rem;
     color: #666; /* Subtle grey so it doesn't distract from projects */
 }
+
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
     /* 1. Reset the container for a tight fit */
@@ -931,20 +939,22 @@ body {
         flex-direction: column !important; /* The magic: stacks them vertically */
         align-items: center !important;    /* Centers them horizontally */
         justify-content: center !important;
-        gap: 25px !important;              /* Adds breathing room between logos */
         width: 100% !important;
         margin: 30px 0 !important;         /* Space above and below the logo group */
     }
 
-    /* Standardizing the size of all logos so they look uniform in a list */
-    .funder-img, 
-    .funder-logo {
-        display: block !important;
-        margin: 0 auto !important;
-        height: auto !important;           /* Allows natural scaling */
-        max-height: 50px !important;       /* Limits height for landscape logos */
-        max-width: 200px !important;       /* Limits width for square/tall logos */
-    }
+/* Inside your bottom-most @media (max-width: 768px) block */
+
+.funder-img, 
+.funder-logo {
+    display: block !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    
+    /* CHANGE THESE TWO VALUES */
+    max-height: 80px !important;  /* Was 50px - this controls the height */
+    max-width: 250px !important; /* Was 200px - this allows it to expand width-wise */
+}
 
     /* Specific adjustment for the CAOV logo to keep it legible */
     .funder-logo.caov {
