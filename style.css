@@ -821,80 +821,48 @@ letter-spacing: 0.06em;
 }
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
-    
-    /* 1. Stack the Poster and the Text */
+    /* 1. Reset the container for a tight fit */
     .project-entry {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centers the content */
-        text-align: center;   /* Centers text for a cleaner mobile look */
-        padding: 20px 0;
+        align-items: center;
+        text-align: center;
+        gap: 0 !important; /* Forces zero space between flex items */
     }
 
-    /* 2. Force full width for columns */
-    .media-column, 
-    .info-column {
-        width: 100% !important;
-        max-width: 100%;
+    /* 2. Remove all padding/margins from the image container */
+    .media-column {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0; 
     }
 
-    /* 3. Poster Image Control */
-    .poster-img {
-        max-width: 280px; /* Standardize vertical poster size */
-        height: auto;
-        margin-bottom: 15px;
-    }
-
-    /* Ensure horizontal posters don't look tiny */
     .poster-img.horizontal {
-        max-width: 100%;
-        padding: 0 10px;
+        display: block;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 
-    /* 4. Project Title Styling */
+    /* 3. Aggressively pull the text up */
+    .info-column {
+        margin-top: -25px !important; /* Increase this to -35px if still too far */
+        padding-top: 0 !important;
+    }
+
+    /* 4. Reset the Title's internal spacing */
     .project-title {
-        font-size: 1.4rem;
-        margin-top: 0;
-        margin-bottom: 10px;
+        margin: 0 !important; 
+        padding: 0 !important;
+        display: block;
+        line-height: 1; /* Stops the text from having top/bottom air */
     }
 
-    /* 5. Bullet Point (Status List) Fix */
-    .status-list {
-        list-style-position: inside; /* Keeps bullet aligned with centered text */
-        padding: 0;
-        margin: 5px 0 15px 0;
-        display: inline-block; /* Allows it to center properly */
+    /* 5. Hide the specific <br> that creates the gap */
+    .project-title + br {
+        display: none !important;
     }
-
-    /* 6. Descriptions and Credits */
-    .description, .acknowledgment {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        padding: 0 15px; /* Adds breathing room on screen edges */
-        margin-bottom: 15px;
-    }
-
-    .credits {
-        font-size: 0.9rem;
-        margin-top: 10px;
-    }
-
-    /* 7. Funder Logos Alignment */
-    .funder-logos {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-    }
-
-    .funder-img {
-        max-height: 40px; /* Prevents logos from being too large */
-        width: auto;
-    }
-
-    /* 8. Screenings Section */
-    .screenings {
-        text-align: left;
-        padding: 0 20px;
-    }
+/* 6. Restore space between the title and the description */
+.project-title {
+    margin-bottom: 15px !important; /* Adjust this number to get the perfect gap */
+}
 }
