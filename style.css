@@ -870,12 +870,12 @@ display: flex !important;
 
 /* --- MOBILE RESPONSIVE STYLES (Max-width: 768px) --- */
 @media (max-width: 768px) {
-    
+
     /* 1. Remove side padding to maximize screen space */
     .content-container,
     .showcase-page,
     .wtcra-container {
-        padding: 10px !important; /* Tiny 10px gutter so text doesn't touch the glass */
+        padding: 30px !important; /* Tiny 10px gutter so text doesn't touch the glass */
         max-width: 100% !important;
         width: 100% !important;
         box-sizing: border-box;
@@ -986,4 +986,25 @@ display: flex !important;
         max-width: 250px;
         margin-bottom: 20px;
     }
+@media (max-width: 768px) {
+    /* Targets the body and all common text classes in one go */
+    body, 
+    .description, 
+    .bio, 
+    .credits p, 
+    .status-list, 
+    .statement-text,
+    .project-description,
+    .dev-intro {
+        font-size: 0.85rem !important; /* Forces the size down */
+        line-height: 1.5 !important;  /* Tightens spacing for small screens */
+    }
+
+    /* Shrink titles slightly so they don't look huge next to the new small text */
+    .project-title, .page-title, .name-header {
+        font-size: 1.3rem !important;
+    }
+    
+    /* Keep the rest of your existing mobile styles below... */
+}
 }
