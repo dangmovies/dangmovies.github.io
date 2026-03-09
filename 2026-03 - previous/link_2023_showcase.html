@@ -6,76 +6,6 @@
     <title>2023 Showcase - those dang movies</title>
     <link rel="icon" type="image/webp" href="filmreel.webp">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .poster-wrap {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .poster-wrap::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0);
-            transition: background 0.25s ease;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .poster-wrap:hover::before {
-            background: rgba(0, 0, 0, 0.55);
-        }
-        .poster-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.85);
-            opacity: 0;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .poster-wrap:hover .poster-play {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .poster-play svg {
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
-        }
-        .yt-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.88);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-        }
-        .yt-modal.open { display: flex; }
-        .yt-modal-inner {
-            position: relative;
-            width: 90vw;
-            max-width: 960px;
-        }
-        .yt-modal-inner iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-            display: block;
-        }
-        .yt-modal-close {
-            position: absolute;
-            top: -36px;
-            right: 0;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.6rem;
-            cursor: pointer;
-            line-height: 1;
-            opacity: 0.8;
-        }
-        .yt-modal-close:hover { opacity: 1; }
-    </style>
 </head>
 <body>
 
@@ -105,16 +35,15 @@
     <hr class="dividertop">
 <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('veYUpFHGaw0')">
+            <a href="https://youtu.be/veYUpFHGaw0" target="_blank">
                 <img src="2023_showcase_don_poster.webp" alt="dance or nah poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('veYUpFHGaw0')" style="cursor:pointer;">
+                <a href="https://youtu.be/veYUpFHGaw0" target="_blank" style="text-decoration: inherit; color: inherit;">
                     dance or nah &bull; 15 mins <span class="genre">drama short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">An uncertain dancer’s life takes an unexpected turn when she bonds with an actor, only to discover the connection is one-sided, leading her on a journey of self-discovery and personal growth.</p>
             <div class="credits">
@@ -131,16 +60,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('jbGpgZv2mpU')">
+            <a href="https://youtu.be/jbGpgZv2mpU" target="_blank">
                 <img src="2023_showcase_btk_poster.webp" alt="beyond the knocks poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('jbGpgZv2mpU')" style="cursor:pointer;">
+                <a href="https://youtu.be/jbGpgZv2mpU" target="_blank" style="text-decoration: inherit; color: inherit;">
                     beyond the knocks &bull; 11 mins <span class="genre">drama thriller</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">When a reclusive writer meets his disturbed neighbour, who shares a horrifying story, the line between reality and fiction becomes blurred as the writer investigates further into the story.</p>
             <div class="credits">
@@ -157,16 +85,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('xcqcd6tC0OA')">
+            <a href="https://youtu.be/xcqcd6tC0OA" target="_blank">
                 <img src="2023_showcase_mim_poster.webp" alt="Minsoo is missing poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('xcqcd6tC0OA')" style="cursor:pointer;">
+                <a href="https://youtu.be/xcqcd6tC0OA" target="_blank" style="text-decoration: inherit; color: inherit;">
                     minsoo is missing &bull; 8 mins <span class="genre">comedy short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">After receiving a vague text, Richard scours the streets of Toronto's Koreatowns, immersing himself in the language and culture, in a desperate search for his filmmaker friend, Minsoo. But sometimes, miscommunications lead to unexpected adventures.</p>
             <div class="credits">
@@ -183,16 +110,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('AJem_OxyGg8')">
+            <a href="https://youtu.be/AJem_OxyGg8" target="_blank">
                 <img src="2023_showcase_ktd_poster.webp" alt="keys to death poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('AJem_OxyGg8')" style="cursor:pointer;">
+                <a href="https://youtu.be/AJem_OxyGg8" target="_blank" style="text-decoration: inherit; color: inherit;">
                     keys to death &bull; 9 mins <span class="genre">dark comedy short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">A carefree woman accidentally kills, but when an unexpected guest arrives, chaos ensues, turning her cover-up into a web of murder, secrets, and unlikely friends.</p>
             <div class="credits">
@@ -209,16 +135,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('gU-xLZvWFxg')">
+            <a href="https://youtu.be/gU-xLZvWFxg" target="_blank">
                 <img src="2023_showcase_ry_poster.webp" alt="Raging Yak poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('gU-xLZvWFxg')" style="cursor:pointer;">
+                <a href="https://youtu.be/gU-xLZvWFxg" target="_blank" style="text-decoration: inherit; color: inherit;">
                     raging yak &bull; 4 mins <span class="genre">action comedy short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">A film pitch to Netfaux takes a chaotic turn when a masked intruder bursts into the apartment, triggering an action-packed showdown.</p>
             <div class="credits">
@@ -235,16 +160,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('Xtmu4EEz854')">
+            <a href="https://youtu.be/Xtmu4EEz854" target="_blank">
                 <img src="2023_showcase_ba_poster.webp" alt="bugging April poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('Xtmu4EEz854')" style="cursor:pointer;">
+                <a href="https://youtu.be/Xtmu4EEz854" target="_blank" style="text-decoration: inherit; color: inherit;">
                     bugging april &bull; 10 mins <span class="genre">drama short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">An actor consumed by ambition undermines his struggling wife backstage. His lack of support drives their reality into a dangerous downward spiral.</p>
             <div class="credits">
@@ -261,16 +185,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('rXRouWqzgG0')">
+            <a href="https://youtu.be/rXRouWqzgG0" target="_blank">
                 <img src="2023_showcase_bbb_poster.webp" alt="betrayal by blood poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('rXRouWqzgG0')" style="cursor:pointer;">
+                <a href="https://youtu.be/rXRouWqzgG0" target="_blank" style="text-decoration: inherit; color: inherit;">
                     betrayal by blood &bull; 7 mins <span class="genre">action short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">Hidetaka, wracked with guilt, plans to expose a crime syndicate but is ambushed by a vengeful fighter. Their brutal battle reveals a painful truth.</p>
             <div class="credits">
@@ -287,16 +210,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('DW82GKhhuhI')">
+            <a href="https://youtu.be/DW82GKhhuhI" target="_blank">
                 <img src="2023_showcase_itt_poster.webp" alt="in the trap poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('DW82GKhhuhI')" style="cursor:pointer;">
+                <a href="https://youtu.be/DW82GKhhuhI" target="_blank" style="text-decoration: inherit; color: inherit;">
                     in the trap &bull; 3 mins <span class="genre">drama short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">Frank and April argue after her performance, with Frank criticizing her acting career, while April, feeling trapped and dismissed, responds with anger.</p>
             <div class="credits">
@@ -314,16 +236,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('WLbKT9vV6kM')">
+            <a href="https://youtu.be/WLbKT9vV6kM" target="_blank">
                 <img src="2023_showcase_ltn_poster.webp" alt="love thy neighbour poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('WLbKT9vV6kM')" style="cursor:pointer;">
+                <a href="https://youtu.be/WLbKT9vV6kM" target="_blank" style="text-decoration: inherit; color: inherit;">
                     love thy neighbour &bull; 7 mins <span class="genre">comedy short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">When a power outage disrupts the lives of two neighbors, Minsoo and Richard find themselves in a comical and escalating battle over a discarded lamp, leading to a series of mischievous acts and heartfelt flashbacks that challenge their friendship.</p>
             <div class="credits">
@@ -340,16 +261,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('dfpVPZihRi8')">
+            <a href="https://youtu.be/dfpVPZihRi8" target="_blank">
                 <img src="2023_showcase_som_poster.webp" alt="scent of magnolia poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('dfpVPZihRi8')" style="cursor:pointer;">
+                <a href="https://youtu.be/dfpVPZihRi8" target="_blank" style="text-decoration: inherit; color: inherit;">
                     scent of magnolia &bull; 6 mins <span class="genre">drama short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">Desperate to find his missing girlfriend, a troubled man rents an apartment that seems to hold traces of her presence, only to uncover a chilling truth that pushes him to the brink of despair.</p>
             <div class="credits">
@@ -366,16 +286,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('2-lUJtRyye8')">
+            <a href="https://youtu.be/2-lUJtRyye8" target="_blank">
                 <img src="2023_showcase_ll_poster.webp" alt="last leaf poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('2-lUJtRyye8')" style="cursor:pointer;">
+                <a href="https://youtu.be/2-lUJtRyye8" target="_blank" style="text-decoration: inherit; color: inherit;">
                     last leaf &bull; 6 mins <span class="genre">drama short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">A burned-out creative juggles deadlines while supporting his terminally ill friend, finding an unexpected way to bring her comfort through his craft.</p>
             <div class="credits">
@@ -392,16 +311,15 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('b5u5k9iksao')">
+            <a href="https://youtu.be/b5u5k9iksao" target="_blank">
                 <img src="2023_showcase_te_poster.webp" alt="the exchange poster" class="poster-img">
-                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <span onclick="openModal('b5u5k9iksao')" style="cursor:pointer;">
+                <a href="https://youtu.be/b5u5k9iksao" target="_blank" style="text-decoration: inherit; color: inherit;">
                     the exchange &bull; 5 mins <span class="genre">action short</span>
-                </span>
+                </a>
             </h2><br>
             <p class="description">A comedy about a man who sells everything to buy a gift for his best friend.</p>            <div class="credits">
                 <p><em>Written and Directed by Richard Dang</em></p>
@@ -422,7 +340,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
         </a>
 
-        <a href="/cdn-cgi/l/email-protection#89fbe0eae1e8fbeda7ede8e7eebebdbac9eee4e8e0e5a7eae6e4" aria-label="Email">
+        <a href="mailto:richard.dang743@gmail.com" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
     </div>
@@ -436,40 +354,16 @@
         const roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
         let str = '';
         for (let i in roman) {
-            while (year >= roman[i]) { str += i; year -= roman[i]; }
+            while (year >= roman[i]) {
+                str += i;
+                year -= roman[i];
+            }
         }
         return str;
     }
     document.getElementById('roman-year').textContent = toRoman(new Date().getFullYear());
 </script>
 
-<div class="yt-modal" id="ytModal" onclick="closeModal(event)">
-    <div class="yt-modal-inner">
-        <button class="yt-modal-close" onclick="closeModal()">&times;</button>
-        <iframe id="ytFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-</div>
-
-<script>
-    function openModal(videoId) {
-        document.getElementById('ytFrame').src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
-        document.getElementById('ytModal').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeModal(e) {
-        if (e && e.target !== document.getElementById('ytModal')) return;
-        document.getElementById('ytFrame').src = '';
-        document.getElementById('ytModal').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.getElementById('ytFrame').src = '';
-            document.getElementById('ytModal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-    });
-</script>
 
     </main>
 </body>

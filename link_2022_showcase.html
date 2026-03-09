@@ -6,6 +6,76 @@
     <title>2022 Showcase - those dang movies</title>
     <link rel="icon" type="image/webp" href="filmreel.webp">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .poster-wrap {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .poster-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.25s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .poster-wrap:hover::before {
+            background: rgba(0, 0, 0, 0.55);
+        }
+        .poster-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .poster-wrap:hover .poster-play {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .poster-play svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+        }
+        .yt-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .yt-modal.open { display: flex; }
+        .yt-modal-inner {
+            position: relative;
+            width: 90vw;
+            max-width: 960px;
+        }
+        .yt-modal-inner iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            display: block;
+        }
+        .yt-modal-close {
+            position: absolute;
+            top: -36px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+        }
+        .yt-modal-close:hover { opacity: 1; }
+    </style>
 </head>
 <body>
 
@@ -35,15 +105,16 @@
     <hr class="dividertop">
 <section class="project-entry">
         <div class="media-column">
-            <a href="https://www.youtube.com/watch?v=qLbxyyff8EI" target="_blank">
+            <div class="poster-wrap" onclick="openModal('qLbxyyff8EI')">
                 <img src="2022_showcase_ms_poster.webp" alt="my son poster" class="poster-img">
-            </a>
+                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
+            </div>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <a href="https://www.youtube.com/watch?v=qLbxyyff8EI" target="_blank" style="text-decoration: inherit; color: inherit;">
+                <span onclick="openModal('qLbxyyff8EI')" style="cursor:pointer;">
                     my son &bull; 11 mins <span class="genre">drama short</span>
-                </a>
+                </span>
             </h2><br>
             <p class="description">A refugee parent puts his child in a hockey program. As he struggles with financial support, he learns that his son has a wish greater than hockey.</p>
             <div class="credits">
@@ -60,15 +131,16 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <a href="https://youtu.be/W2SaGATdv_o" target="_blank">
+            <div class="poster-wrap" onclick="openModal('W2SaGATdv_o')">
                 <img src="2022_showcase_knb_poster.webp" alt="know no better poster" class="poster-img">
-            </a>
+                <div class="poster-play"><svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg></div>
+            </div>
         </div>
         <div class="info-column">
             <h2 class="project-title">
-                <a href="https://youtu.be/W2SaGATdv_o" target="_blank" style="text-decoration: inherit; color: inherit;">
+                <span onclick="openModal('W2SaGATdv_o')" style="cursor:pointer;">
                     know no better &bull; 11 mins <span class="genre">drama short</span>
-                </a>
+                </span>
             </h2><br>
             <p class="description">An infatuated teenager steals a hair-straightener to impress his crush. However, his notoriety catches up with him and after an incident involving his mother, he decides to alter the course of his decisions.</p>
             <div class="credits">
@@ -108,7 +180,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
         </a>
 
-        <a href="mailto:richard.dang743@gmail.com" aria-label="Email">
+        <a href="/cdn-cgi/l/email-protection#73011a101b1201175d17121d1444474033141e121a1f5d101c1e" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
     </div>
@@ -117,21 +189,45 @@
     </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function toRoman(year) {
         const roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
         let str = '';
         for (let i in roman) {
-            while (year >= roman[i]) {
-                str += i;
-                year -= roman[i];
-            }
+            while (year >= roman[i]) { str += i; year -= roman[i]; }
         }
         return str;
     }
     document.getElementById('roman-year').textContent = toRoman(new Date().getFullYear());
 </script>
 
+<div class="yt-modal" id="ytModal" onclick="closeModal(event)">
+    <div class="yt-modal-inner">
+        <button class="yt-modal-close" onclick="closeModal()">&times;</button>
+        <iframe id="ytFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    function openModal(videoId) {
+        document.getElementById('ytFrame').src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
+        document.getElementById('ytModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal(e) {
+        if (e && e.target !== document.getElementById('ytModal')) return;
+        document.getElementById('ytFrame').src = '';
+        document.getElementById('ytModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.getElementById('ytFrame').src = '';
+            document.getElementById('ytModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
 
     </main>
 </body>
