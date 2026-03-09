@@ -6,109 +6,6 @@
     <title>2024 Showcase - those dang movies</title>
     <link rel="icon" type="image/webp" href="filmreel.webp">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .poster-wrap {
-            position: relative;
-            display: inline-block;
-        }
-        /* Dark overlay on hover */
-        .poster-wrap::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0);
-            transition: background 0.25s ease;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .poster-wrap:hover::before {
-            background: rgba(0, 0, 0, 0.55);
-        }
-        /* YouTube play button — appears on hover */
-        .poster-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.85);
-            opacity: 0;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .poster-wrap:hover .poster-play {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .poster-play svg {
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
-        }
-        /* Festival circuit overlay */
-        .poster-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease, background 0.3s ease;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .poster-wrap:hover .poster-overlay {
-            background: rgba(0, 0, 0, 0.72);
-            opacity: 1;
-        }
-        .poster-overlay-text {
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 0 1rem;
-            pointer-events: none;
-        }
-
-
-        /* Lightbox modal */
-        .yt-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.88);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-        }
-        .yt-modal.open {
-            display: flex;
-        }
-        .yt-modal-inner {
-            position: relative;
-            width: 90vw;
-            max-width: 960px;
-        }
-        .yt-modal-inner iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-            display: block;
-        }
-        .yt-modal-close {
-            position: absolute;
-            top: -36px;
-            right: 0;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.6rem;
-            cursor: pointer;
-            line-height: 1;
-            opacity: 0.8;
-        }
-        .yt-modal-close:hover { opacity: 1; }
-    </style>
 </head>
 <body>
 
@@ -138,10 +35,9 @@
     <hr class="dividertop">
 <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('Y9jlPmidUgc')" style="cursor:pointer;">
+            <a href="https://youtu.be/Y9jlPmidUgc" target="_blank">
                 <img src="2024_showcase_tgs_poster.webp" alt="The Tough, the Gentle, and the Strong Poster" class="poster-img">
-                <div class="poster-overlay"><span class="poster-overlay-text">In Festival Circuit</span></div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
@@ -164,12 +60,9 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('-3U4M05T4NQ')" style="cursor:pointer;">
+            <a href="https://youtu.be/-3U4M05T4NQ" target="_blank">
                 <img src="2024_showcase_litc_poster.webp" alt="Lost in the Cycle Poster" class="poster-img">
-                <div class="poster-play">
-                    <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg>
-                </div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
@@ -192,12 +85,9 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('u6llGaZniMI')" style="cursor:pointer;">
+            <a href="https://youtu.be/u6llGaZniMI" target="_blank">
                 <img src="2024_showcase_yk_poster.webp" alt="You Khmer Poster" class="poster-img">
-                <div class="poster-play">
-                    <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg>
-                </div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
@@ -220,12 +110,9 @@
 
     <section class="project-entry">
         <div class="media-column">
-            <div class="poster-wrap" onclick="openModal('-5xY1VxKLgU')" style="cursor:pointer;">
+            <a href="https://youtu.be/-5xY1VxKLgU" target="_blank">
                 <img src="2024_showcase_gts_poster.webp" alt="Gimme the Song Poster" class="poster-img">
-                <div class="poster-play">
-                    <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="rgba(255,255,255,0.25)"/><polygon points="21,16 21,36 38,26" fill="white"/></svg>
-                </div>
-            </div>
+            </a>
         </div>
         <div class="info-column">
             <h2 class="project-title">
@@ -254,7 +141,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
         </a>
 
-        <a href="/cdn-cgi/l/email-protection#f3819a909b928197dd97929d94c4c7c0b3949e929a9fdd909c9e" aria-label="Email">
+        <a href="mailto:richard.dang743@gmail.com" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
     </div>
@@ -263,7 +150,7 @@
     </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     function toRoman(year) {
         const roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
         let str = '';
@@ -273,36 +160,12 @@
                 year -= roman[i];
             }
         }
+        return str;
     }
     document.getElementById('roman-year').textContent = toRoman(new Date().getFullYear());
 </script>
 
+
     </main>
-
-<!-- YouTube lightbox modal -->
-<div class="yt-modal" id="ytModal" onclick="closeModal(event)">
-    <div class="yt-modal-inner">
-        <button class="yt-modal-close" onclick="closeModal()">&times;</button>
-        <iframe id="ytFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-</div>
-
-<script>
-    function openModal(videoId) {
-        document.getElementById('ytFrame').src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
-        document.getElementById('ytModal').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeModal(e) {
-        if (e && e.target !== document.getElementById('ytModal')) return;
-        document.getElementById('ytFrame').src = '';
-        document.getElementById('ytModal').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
-    });
-</script>
-
 </body>
 </html>

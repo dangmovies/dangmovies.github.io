@@ -6,37 +6,6 @@
     <title>2025 Showcase - dang movies</title>
     <link rel="icon" type="image/webp" href="filmreel.webp">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .poster-wrap {
-            position: relative;
-            display: inline-block;
-        }
-        .poster-wrap .poster-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease, background 0.3s ease;
-            border-radius: inherit;
-        }
-        .poster-wrap:hover .poster-overlay {
-            background: rgba(0, 0, 0, 0.72);
-            opacity: 1;
-        }
-        .poster-overlay-text {
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 0 1rem;
-            pointer-events: none;
-        }
-    </style>
 </head>
 <body>
 
@@ -66,9 +35,8 @@
         <hr class="dividertop">
 <section class="project-entry">
 <div class="media-column">
-            <a href="link_showcase_ransom.html" class="poster-wrap">
+            <a href="link_showcase_ransom.html">
                 <img src="2025_showcase_rs_poster.webp" alt="Ran Som Poster" class="poster-img">
-                <div class="poster-overlay"><span class="poster-overlay-text">In Festival Circuit</span></div>
             </a>
         </div>
         <div class="info-column">
@@ -96,9 +64,8 @@
 <hr class="divider">
 <section class="project-entry">
 <div class="media-column">
-    <a href="link_showcase_wtcra.html" class="poster-wrap">
+    <a href="link_showcase_wtcra.html">
         <img src="2025_showcase_wtcra_poster.webp" alt="Where the Cambodian Restaurants At" class="poster-img horizontal">
-        <div class="poster-overlay"><span class="poster-overlay-text">In Development</span></div>
     </a>
 </div>
 <div class="info-column">
@@ -116,10 +83,7 @@
      <hr class="divider">
 <section class="project-entry">
     <div class="media-column">
-        <div class="poster-wrap">
-            <img src="2025_showcase_rpr_poster.webp" alt="Record Pause Record" class="poster-img horizontal">
-            <div class="poster-overlay"><span class="poster-overlay-text">In Festival Circuit</span></div>
-        </div>
+        <img src="2025_showcase_rpr_poster.webp" alt="Record Pause Record" class="poster-img horizontal">
     </div>
     <div class="info-column">
         <h2 class="project-title">record pause record &bull; 27 mins <span class="genre">documentary</span></h2>
@@ -148,7 +112,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
         </a>
 
-        <a href="/cdn-cgi/l/email-protection#35475c565d5447511b51545b52020106755258545c591b565a58" aria-label="Email">
+        <a href="mailto:richard.dang743@gmail.com" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
     </div>
@@ -157,7 +121,7 @@
     </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     function toRoman(year) {
         const roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
         let str = '';
@@ -167,4 +131,12 @@
                 year -= roman[i];
             }
         }
-        
+        return str;
+    }
+    document.getElementById('roman-year').textContent = toRoman(new Date().getFullYear());
+</script>
+
+
+    </main>
+</body>
+</html>
