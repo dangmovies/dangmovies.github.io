@@ -908,6 +908,28 @@ display: flex !important;
         padding: 0 !important;
         line-height: 0; 
     }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Forces the menu to start exactly at the bottom of the button */
+    background-color: black;
+    min-width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding-top: 10px; /* Keep this to create visual space inside the hoverable area */
+}
+
+/* Add this 'Invisible Bridge' for extra safety */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -15px; /* Reaches up to grab the button */
+    left: 0;
+    right: 0;
+    height: 15px;
+    display: block;
+}
 
     .poster-img {
         display: block;
