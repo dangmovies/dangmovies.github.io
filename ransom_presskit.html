@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAN SOM — Press Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lime: #c8f000;
+    --purple: #8b00ff;
+    --purple-light: #b44dff;
+    --dark: #0d0d0d;
+    --mid: #1a1a1a;
+    --card: #141414;
+    --text: #e8e8e8;
+    --muted: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem 2rem 2.5rem;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(139,0,255,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 70%, rgba(200,240,0,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,240,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,240,0,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .hero-label {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    border: 1px solid var(--purple);
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(5rem, 20vw, 13rem);
+    line-height: 0.85;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -2px;
+  }
+
+  .hero-title .ran {
+    color: var(--lime);
+    display: block;
+    -webkit-text-stroke: 2px var(--purple);
+    text-shadow:
+      4px 4px 0 var(--purple),
+      8px 8px 0 rgba(139,0,255,0.3);
+  }
+
+  .hero-title .som {
+    color: var(--purple);
+    display: block;
+    -webkit-text-stroke: 2px var(--lime);
+    text-shadow:
+      4px 4px 0 var(--lime),
+      8px 8px 0 rgba(200,240,0,0.3);
+    margin-left: 0.15em;
+  }
+
+  .hero-meta {
+    position: relative;
+    z-index: 2;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.3rem 0.7rem;
+    border: 1px solid #333;
+  }
+
+  .hero-tag span {
+    color: var(--lime);
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 4rem 2rem;
+    background: var(--mid);
+  }
+
+  .section-full .inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--purple), transparent);
+  }
+
+  .section-label {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--lime);
+    -webkit-text-stroke: 1px var(--purple);
+    white-space: nowrap;
+  }
+
+  /* ── SYNOPSIS ── */
+  .synopsis-text {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #ccc;
+    border-left: 3px solid var(--lime);
+    padding-left: 1.5rem;
+  }
+
+  /* ── DIRECTOR ── */
+  .director-block {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .director-img-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--purple) 0%, #3d0080 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: var(--lime);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .director-img-placeholder::after {
+    content: 'RD';
+  }
+
+  .director-name {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: var(--lime);
+    margin-bottom: 0.5rem;
+  }
+
+  .director-role {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 1rem;
+  }
+
+  .director-bio {
+    color: #bbb;
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  /* ── CAST ── */
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cast-card {
+    background: var(--card);
+    border: 1px solid #222;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .cast-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-3px);
+  }
+
+  .cast-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #1e1e1e 0%, #111 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cast-photo::before {
+    content: attr(data-initials);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    color: rgba(200,240,0,0.12);
+  }
+
+  .cast-character {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3rem;
+    color: var(--lime);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cast-info {
+    padding: 0.8rem;
+  }
+
+  .cast-actor {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .cast-credits {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .cast-debut {
+    font-size: 0.7rem;
+    color: var(--purple-light);
+    font-style: italic;
+  }
+
+  /* ── DIRECTOR'S NOTES ── */
+  .notes-block {
+    background: var(--card);
+    border: 1px solid #1e1e1e;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notes-block::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 8rem;
+    color: rgba(139,0,255,0.08);
+    line-height: 1;
+  }
+
+  .notes-text {
+    position: relative;
+    z-index: 1;
+    color: #bbb;
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+
+  .notes-text p + p {
+    margin-top: 1rem;
+  }
+
+  /* ── CREW ── */
+  .crew-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+  }
+
+  .crew-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #1e1e1e;
+    gap: 1rem;
+  }
+
+  .crew-role {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .crew-name {
+    font-size: 0.82rem;
+    color: var(--text);
+    text-align: right;
+  }
+
+  /* ── SPECS ── */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: #1e1e1e;
+    border: 1px solid #1e1e1e;
+  }
+
+  .spec-item {
+    background: var(--card);
+    padding: 1.2rem 1rem;
+  }
+
+  .spec-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .spec-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--lime);
+  }
+
+  /* ── FESTIVALS ── */
+  .festival-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .festival-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    padding: 1.2rem 1.5rem;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .festival-item:hover {
+    border-left-color: var(--lime);
+  }
+
+  .festival-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .festival-award {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lime);
+    background: rgba(200,240,0,0.08);
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(200,240,0,0.2);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  footer .footer-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: var(--lime);
+    -webkit-text-stroke: 1px var(--purple);
+    margin-bottom: 0.5rem;
+  }
+
+  footer p {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .director-block {
+      grid-template-columns: 1fr;
+    }
+    .director-img-placeholder {
+      width: 120px;
+    }
+    .hero-label {
+      display: none;
+    }
+    .crew-list {
+      grid-template-columns: 1fr;
+    }
+    .festival-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+
+  /* ── FADE IN ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-title { animation: fadeUp 0.8s ease both; }
+  .hero-meta  { animation: fadeUp 0.8s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-label">Press Kit — 2025</div>
+  <div class="hero-title">
+    <span class="ran">RAN</span>
+    <span class="som">SOM</span>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-tag">Runtime <span>12:16</span></div>
+    <div class="hero-tag">Canada <span>2025</span></div>
+    <div class="hero-tag">Drama <span>/</span> Comedy</div>
+    <div class="hero-tag">English <span>/</span> Khmer</div>
+    <div class="hero-tag">Dir. <span>Richard Dang</span></div>
+  </div>
+</section>
+
+<!-- SYNOPSIS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">Synopsis</div>
+  </div>
+  <p class="synopsis-text">
+    Ran Som is a comedy thriller that turns a crime gone wrong into an unexpected story of connection. Two small-time burglars kidnap the son of a wealthy businessman, hoping for a quick payout. What begins as a clumsy, ill-planned heist shifts when they uncover the boy's troubled home life. As tensions rise, moments of humor and unease collide, revealing that everyone — whether criminal or respectable — is shaped by circumstance. The final encounter leaves no clear winners or villains, only a fleeting sense that even in chaos, people can choose to see each other differently.
+  </p>
+</div>
+
+<div class="divider"></div>
+
+<!-- DIRECTOR -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">Writer &amp; Director</div>
+  </div>
+  <div class="director-block">
+    <div class="director-img-placeholder"></div>
+    <div>
+      <div class="director-name">Richard Dang</div>
+      <div class="director-role">Writer &amp; Director</div>
+      <p class="director-bio">
+        Richard Dang is a Cambodian Canadian filmmaker whose work explores inner guilt, peace amid violence, and intergenerational reconciliation. Since 2021, he's worked as a union Assistant Director, learning the craft from the ground up. When the 2023 WGA and SAG-AFTRA strikes occurred, his love for storytelling pushed him into the director's chair.
+      </p>
+      <br>
+      <p class="director-bio">
+        Since then, Richard has written and directed twenty films to create space for himself and his peers to express themselves. His work has screened at many Canadian festivals. By connecting with festivals, he hopes to bring these stories to wider audiences and continue expanding the reach of his films.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DIRECTOR'S NOTES -->
+<div class="section-full">
+  <div class="inner">
+    <div class="section-header">
+      <div class="section-label">Director's Notes</div>
+    </div>
+    <div class="notes-block">
+      <div class="notes-text">
+        <p>Ran Som grew out of a real experience from my childhood, when two men broke into my home while I was alone. They were from my own community — familiar faces, not movie villains. Years later, I began to understand what desperation and environment can do to people.</p>
+        <p>This film blends tension with dark humour to explore that gray area — how empathy sometimes appears in the most unlikely situations. The burglars in Ran Som aren't evil, just lost. The father isn't simply cruel, just repeating what he knows. By the end, each character sees the others differently, and for a brief moment, there's room for change. That space between laughter and unease — that's where the humanity of this story lives.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAST -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">Cast</div>
+  </div>
+  <div class="cast-grid">
+    <div class="cast-card">
+      <div class="cast-photo" data-initials="MD">
+        <span class="cast-character">Kong</span>
+      </div>
+      <div class="cast-info">
+        <div class="cast-actor">Mike Dara</div>
+        <div class="cast-credits">ACTRA<br>What We Do in the Shadows, Pretty Hard Case, Hudson &amp; Rex</div>
+      </div>
+    </div>
+    <div class="cast-card">
+      <div class="cast-photo" data-initials="BT">
+        <span class="cast-character">Mars</span>
+      </div>
+      <div class="cast-info">
+        <div class="cast-actor">Brendan Tan</div>
+        <div class="cast-debut">Acting debut</div>
+      </div>
+    </div>
+    <div class="cast-card">
+      <div class="cast-photo" data-initials="ED">
+        <span class="cast-character">Ah Boy</span>
+      </div>
+      <div class="cast-info">
+        <div class="cast-actor">Eliot Dahan</div>
+        <div class="cast-credits">ACTRA<br>Paw Patrol, Blue's Clues &amp; You</div>
+      </div>
+    </div>
+    <div class="cast-card">
+      <div class="cast-photo" data-initials="NLG">
+        <span class="cast-character">Nguoy</span>
+      </div>
+      <div class="cast-info">
+        <div class="cast-actor">Nicco Lorenzo Garcia</div>
+        <div class="cast-credits">ACTRA<br>Cambodian Rock Band, Abroad, Slip</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FESTIVALS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">Festivals &amp; Awards</div>
+  </div>
+  <div class="festival-list">
+    <div class="festival-item"><span class="festival-name">Reelworld Film Festival</span><span class="festival-award">Official Selection</span></div>
+    <div class="festival-item"><span class="festival-name">Vancouver Asian Film Festival</span><span class="festival-award">Official Selection</span></div>
+    <div class="festival-item"><span class="festival-name">Chilliwack Independent Film Festival</span><span class="festival-award">Official Selection</span></div>
+    <div class="festival-item"><span class="festival-name">Philadelphia Asian Film Festival</span><span class="festival-award">Official Selection</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TECHNICAL SPECS -->
+<div class="section-full">
+  <div class="inner">
+    <div class="section-header">
+      <div class="section-label">Technical Specs</div>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-item"><div class="spec-label">Country of Origin</div><div class="spec-value">Canada</div></div>
+      <div class="spec-item"><div class="spec-label">Country of Filming</div><div class="spec-value">Canada</div></div>
+      <div class="spec-item"><div class="spec-label">Language</div><div class="spec-value">English, Khmer</div></div>
+      <div class="spec-item"><div class="spec-label">Date of Completion</div><div class="spec-value">Feb 2025</div></div>
+      <div class="spec-item"><div class="spec-label">Project Type</div><div class="spec-value">Short</div></div>
+      <div class="spec-item"><div class="spec-label">Genres</div><div class="spec-value">Drama, Comedy</div></div>
+      <div class="spec-item"><div class="spec-label">Runtime</div><div class="spec-value">12m 16s</div></div>
+      <div class="spec-item"><div class="spec-label">Shooting Format</div><div class="spec-value">Digital</div></div>
+      <div class="spec-item"><div class="spec-label">Aspect Ratio</div><div class="spec-value">1.66:1</div></div>
+      <div class="spec-item"><div class="spec-label">Film Color</div><div class="spec-value">Color</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CREW -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-label">Key Production Credits</div>
+  </div>
+  <div class="crew-list">
+    <div class="crew-item"><span class="crew-role">Writer &amp; Director</span><span class="crew-name">Richard Dang</span></div>
+    <div class="crew-item"><span class="crew-role">Producer</span><span class="crew-name">Dila Dokuzoglu</span></div>
+    <div class="crew-item"><span class="crew-role">Director of Photography</span><span class="crew-name">Allen Liu</span></div>
+    <div class="crew-item"><span class="crew-role">Costume Designer</span><span class="crew-name">Charlotte Claytor</span></div>
+    <div class="crew-item"><span class="crew-role">Production Design</span><span class="crew-name">Antonia Sinn</span></div>
+    <div class="crew-item"><span class="crew-role">Casting Director</span><span class="crew-name">Jason Boyd</span></div>
+    <div class="crew-item"><span class="crew-role">1st Assistant Director</span><span class="crew-name">Cowin Poon</span></div>
+    <div class="crew-item"><span class="crew-role">2nd Assistant Director</span><span class="crew-name">Steven Suntres</span></div>
+    <div class="crew-item"><span class="crew-role">Sound Recordist</span><span class="crew-name">Ian Reynolds</span></div>
+    <div class="crew-item"><span class="crew-role">Stunt Coordinator</span><span class="crew-name">Nick Stead</span></div>
+    <div class="crew-item"><span class="crew-role">Hair &amp; Make Up</span><span class="crew-name">Sid Armour</span></div>
+    <div class="crew-item"><span class="crew-role">Script Supervisor</span><span class="crew-name">Can Deniz Atiçi</span></div>
+    <div class="crew-item"><span class="crew-role">Art Director</span><span class="crew-name">Jasmine Asiedu-Anguah</span></div>
+    <div class="crew-item"><span class="crew-role">Set Dresser</span><span class="crew-name">Akanksha Khadam</span></div>
+    <div class="crew-item"><span class="crew-role">1st Assistant Camera</span><span class="crew-name">Mehek Cazi</span></div>
+    <div class="crew-item"><span class="crew-role">Key Lighting Tech</span><span class="crew-name">Hayden Salter</span></div>
+    <div class="crew-item"><span class="crew-role">Key Grip</span><span class="crew-name">Wilny Su</span></div>
+    <div class="crew-item"><span class="crew-role">Dialect Coach</span><span class="crew-name">Sokunthary Svay</span></div>
+    <div class="crew-item"><span class="crew-role">Still Photographer</span><span class="crew-name">Emrah Mihyaz</span></div>
+    <div class="crew-item"><span class="crew-role">Editor</span><span class="crew-name">Buth Yani</span></div>
+    <div class="crew-item"><span class="crew-role">Music Composers</span><span class="crew-name">Igor Correia &amp; Jeff Milutinovic</span></div>
+    <div class="crew-item"><span class="crew-role">Colourist</span><span class="crew-name">Andrew Lea</span></div>
+    <div class="crew-item"><span class="crew-role">Sound Editor</span><span class="crew-name">Olivia Kolakowski</span></div>
+    <div class="crew-item"><span class="crew-role">Final Mix</span><span class="crew-name">Steve Moore</span></div>
+    <div class="crew-item"><span class="crew-role">Online Editor</span><span class="crew-name">Warren Chinn</span></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-title">RAN SOM</div>
+  <p>A RANSOM HOUSE PICTURES FILM — CANADA 2025</p>
+  <p style="margin-top:0.4rem;">Directed by Richard Dang</p>
+</footer>
+
+</body>
+</html>
